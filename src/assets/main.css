@@ -16,6 +16,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 header{
   height: 8vh;
