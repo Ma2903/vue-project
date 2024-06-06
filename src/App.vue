@@ -7,10 +7,13 @@ import Editar from './components/Editar.vue'
 const awesome = ref(false)
 // Definindo a variável reativa para armazenar os dados do banco
 const elements = ref([])
+// Variável reativa para armazenar o elemento selecionado para edição
+const selectedElement = ref(null)
 
-// Função para alternar o estado da variável 'awesome'
-const Switch = () => {
+// Função para alternar o estado da variável 'awesome' e armazenar o elemento clicado
+const Switch = (element) => {
   awesome.value = !awesome.value
+  selectedElement.value = element
 }
 
 // Função assíncrona para carregar os componentes a partir do banco
@@ -48,15 +51,15 @@ onMounted(() => {
           v-for="(element, index) in elements" 
           :key="index" 
           :nome="element.nome" 
+          @click="() => Switch(element)"
         />
-         <!-- Botão para alternar o estado de 'awesome'
-        <button @click="Switch">{{ awesome }}</button>
-         Renderizando o componente 'Editar' com base no estado de 'awesome'
-        <Editar v-if="awesome"/> -->
+        <!-- Renderizando o componente 'Editar' com base no estado de 'awesome' e passando o elemento selecionado -->
+        <Editar v-if="awesome" :element="selectedElement" />
       </section>
     </main>
   </div>
 </template>
+
 
 <style scoped>
 .element{

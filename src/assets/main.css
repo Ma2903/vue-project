@@ -6,8 +6,12 @@
   font-weight: 700;
   font-style: normal;
 }
+#app{
+  width: 100%;
+}
 body{
-  width: 100vw;
+  width: 100%;
+  padding: 2rem;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -15,7 +19,7 @@ body{
 }
 header{
   height: 8vh;
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -62,6 +66,7 @@ button{
 button:hover{
   background-color: #5265f7;
   color: aliceblue;
+  cursor: pointer;
 }
 main{
   width: 90%;
