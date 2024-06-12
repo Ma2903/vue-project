@@ -1,24 +1,40 @@
 <template>
-  <div class="EditScreen">
+  <div class="container is-max-widescreen is-large has-background-white">
     <h2>Editando: {{ element.nome }}</h2>
     <!-- Renderize o formulário de edição aqui, usando os dados de 'element' -->
-    <div>
-      <label for="id">ID:</label>
-      <input type="text" id="id" v-model="element.id" readonly />
+      <div class="field">
+        <label class="label">Nome</label>
+        <div class="control">
+          <input class="input" v-model="element.nome">
+        </div>
+      </div>
 
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" v-model="element.nome" />
+      <!-- <div class="file is-info has-name is-medium">
+        <label class="file-label">
+          <input class="file-input" type="file" name="resume" />
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label"> Info file… </span>
+          </span>
+          <span class="file-name"> Screen Shot 2017-07-29 at 15.54.25.png </span>
+        </label>
+      </div> -->
 
-      <label for="payload">Payload:</label>
-      <input type="text" id="payload" v-model="element.payload" />
-
-      <label for="tags">Tags:</label>
-      <input type="text" id="tags" v-model="element.tags" />
-
-      <label for="tipo">Tipo:</label>
-      <input type="text" id="tipo" v-model="element.tipo" />
+      <div class="field">
+        <label class="label">Tags</label>
+        <div class="control">
+          <input class="input" v-model="element.tags">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Tipo</label>
+        <div class="control">
+          <input class="input" v-model="element.tipo">
+        </div>
+      </div>
     </div>
-  </div>
 </template>
   
   
@@ -34,13 +50,12 @@
   </script>
   
 <style scoped>
-.EditScreen{
-  position: absolute;
+.container{
   top: 0;
-  left: 0;
-  width: 90%;
-  height: 100%;
-  margin-left: 5%;
+  left: 10%;
+  position: absolute;
+  height: 100vh;
+  width: 80%;
   background: red;
 }
 

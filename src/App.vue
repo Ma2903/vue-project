@@ -31,7 +31,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <header> 
+    <header class=""> 
       <h1> Objetos de Aprendizagem </h1>
       <section class="search"> 
         <input type="text" placeholder="Digite Algo..."> 
