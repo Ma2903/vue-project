@@ -37,7 +37,6 @@
     </div>
 </template>
   
-  
   <script setup>
   import { defineProps } from 'vue'
   
