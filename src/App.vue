@@ -60,7 +60,6 @@ onMounted(() => {
   </div>
 </template>
 
-
 <style scoped>
 .element{
   height: 300px;
