@@ -8,11 +8,10 @@ const awesome = ref(false)
 // Definindo a variável reativa para armazenar os dados do banco
 const elements = ref([])
 // Variável reativa para armazenar o elemento selecionado para edição
-const selectedElement = ref(null)
+let selectedElement = ref(null)
 
 // Função para alternar o estado da variável 'awesome' e armazenar o elemento clicado
 const Switch = (element) => {
-  awesome.value = !awesome.value
   selectedElement.value = element
 }
 
@@ -66,16 +65,37 @@ onMounted(() => {
         <Element 
           v-for="(element, index) in elements" 
           :key="index" 
-          :nome="element.nome" 
-          @click="() => Switch(element)"
+          :nome="element.nome"
+          @activate-edit="handleActivateEdit"
         />
         <!-- Renderizando o componente 'Editar' com base no estado de 'awesome' e passando o elemento selecionado -->
-        <Editar v-if="awesome" :element="selectedElement" />
       </div>
-    </main>
-  </div>
+</main>
+</div>
+<Editar :element="selectedElement" :isActive="isActive" id="editScreen"/>
 </template>
 
+<script>
+  export default {
+    name: 'App',
+    components: {
+      Element,
+      Editar
+    },
+    data() {
+      return {
+        isActive: false,
+        element: null  // Inicialmente null, ou você pode definir um objeto vazio se necessário
+      };
+    },
+    methods: {
+      handleActivateEdit() {
+        this.isActive = true;
+        this.element = element;  // Defina um valor apropriado para `element`
+      }
+    }
+  }
+</script>
 <style scoped>
 /* .element{
   height: 300px;
