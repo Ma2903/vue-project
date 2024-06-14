@@ -1,11 +1,18 @@
 <template>
-  <section class="element">
-    <section class="img"> 
-      Imagem de um Livro
-      <section class="del"> </section>
-    </section>
-    <section class="description"> {{ nome }} </section>
-  </section>
+  <div class="cell">
+    <div class="card">
+    <div class="card-image"> 
+      <figure class="image is-3by2">
+        <img src="https://bulma.io/assets/images/placeholders/96x96.png">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="content">
+        {{ nome }} 
+      </div>
+    </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -20,7 +27,7 @@ export default {
 </script>
 
 <style scoped>
-.element{
+/* .element{
   height: 300px;
   width: 100%;
   border-radius: 15%;
@@ -48,5 +55,5 @@ export default {
   align-items: center;
   justify-content: center;
   border-radius: 0 0 30px 30px;
-}
+} */
 </style>

@@ -30,22 +30,38 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <header class=""> 
-      <h1> Objetos de Aprendizagem </h1>
-      <section class="search"> 
-        <input type="text" placeholder="Digite Algo..."> 
-        <i class='bx bx-search-alt'></i>
+  <div class="p-5">
+    <h1 class="title is-3"> Objetos de Aprendizagem </h1>
+    <div class="columns">
+      <section class="column mr-4 is-three-quarters"> 
+        <div class="field has-addons">
+          <div class="control is-expanded">
+            <input class="input w-full" type="text" placeholder="Find a repository">
+          </div>
+          <div class="control">
+            <button class="button is-link">
+              <i class='bx bx-search-alt-2 is-size-4'></i>
+            </button>
+          </div>
+        </div>
       </section>
-      <section class="buttons">
-        <button class="all"> TUDO </button>
-        <button class="text"> TEXTO </button>
-        <button class="audio"> ÁUDIO </button>
-        <button class="picture"> IMAGENS </button>
-      </section>
-    </header>
-    <main>
-      <section class="content">
+      <div class="column field is-grouped ml-5">
+          <p class="control">
+            <button class="button is-link"> Todos </button>
+          </p>
+          <p class="control">
+            <button class="button is-link is-outlined"> Texto </button>
+          </p>
+          <p class="control">
+            <button class="button is-link is-outlined"> Audio </button>
+          </p>
+          <p class="control">
+            <button class="button is-link is-outlined"> Imagem </button>
+          </p>
+      </div>
+    </div>
+    <main class="fixed-grid has-4-cols">
+      <div class="grid is-gap-6">
         <!-- Iterando sobre o array 'elements' e renderizando o componente 'Element' para cada item -->
         <Element 
           v-for="(element, index) in elements" 
@@ -55,13 +71,13 @@ onMounted(() => {
         />
         <!-- Renderizando o componente 'Editar' com base no estado de 'awesome' e passando o elemento selecionado -->
         <Editar v-if="awesome" :element="selectedElement" />
-      </section>
+      </div>
     </main>
   </div>
 </template>
 
 <style scoped>
-.element{
+/* .element{
   height: 300px;
   width: 100%;
   border-radius: 15%;
@@ -89,5 +105,5 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   border-radius: 0 0 30px 30px;
-}
+} */
 </style>
